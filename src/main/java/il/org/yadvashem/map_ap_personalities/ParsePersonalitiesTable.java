@@ -40,6 +40,7 @@ public class ParsePersonalitiesTable {
 					}
 				}
 				person.setDates(dates);
+				ehriPersonalities.add(person);	
 			}
 		}
 		reader.close();
