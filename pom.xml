@@ -25,7 +25,7 @@
 		<dependency>
 			<groupId>com.opencsv</groupId>
 			<artifactId>opencsv</artifactId>
-			<version>3.4</version>
+			<version>4.0</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/info.debatty/java-string-similarity -->
 		<dependency>
