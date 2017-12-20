@@ -1,0 +1,1 @@
+map_ap_personalities
