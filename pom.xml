@@ -4,7 +4,7 @@
 
 	<groupId>il.org.yadvashem</groupId>
 	<artifactId>map_ap_personalities</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
 	<name>map_ap_personalities</name>
