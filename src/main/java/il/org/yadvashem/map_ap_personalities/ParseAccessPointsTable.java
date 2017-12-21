@@ -10,7 +10,7 @@ import com.opencsv.CSVReader;
 public class ParseAccessPointsTable {
 
 	public static List<AccessPoint> readAccessPointsTable(String tablename) throws IOException{
-		List<AccessPoint> personAp = new ArrayList<AccessPoint>();
+		List<AccessPoint> personAps = new ArrayList<AccessPoint>();
 		
 		CSVReader reader = new CSVReader(new FileReader(tablename));
 		String[] nextLine;
@@ -18,10 +18,11 @@ public class ParseAccessPointsTable {
 		while ((nextLine = reader.readNext()) != null) {
 			AccessPoint personAP = new AccessPoint();
 			personAP = ParseAccessPointString.parseAccessPointString(nextLine[0]);
+			personAps.add(personAP);
 			
 		}
 		reader.close();
-		return personAp;
+		return personAps;
 	}
 	
 	
