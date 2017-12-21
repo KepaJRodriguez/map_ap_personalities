@@ -3,6 +3,13 @@ package il.org.yadvashem.map_ap_personalities;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Representation of parts of an access point for partial matching
+ * @author kepa
+ *
+ */
+
+
 public class AccessPoint {
 
 	private String ap_text = "";
