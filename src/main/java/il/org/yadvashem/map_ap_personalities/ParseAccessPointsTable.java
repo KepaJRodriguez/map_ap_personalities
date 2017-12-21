@@ -9,16 +9,15 @@ import com.opencsv.CSVReader;
 
 public class ParseAccessPointsTable {
 
-	public static List<String> readAccessPointsTable(String tablename) throws IOException{
-		List<String> personAp = new ArrayList<String>();
+	public static List<AccessPoint> readAccessPointsTable(String tablename) throws IOException{
+		List<AccessPoint> personAp = new ArrayList<AccessPoint>();
 		
 		CSVReader reader = new CSVReader(new FileReader(tablename));
 		String[] nextLine;
 
 		while ((nextLine = reader.readNext()) != null) {
-		
-			personAp.add(nextLine[0]);
-			
+			AccessPoint personAP = new AccessPoint();
+			personAP = ParseAccessPointString.parseAccessPointString(nextLine[0]);
 			
 		}
 		reader.close();
