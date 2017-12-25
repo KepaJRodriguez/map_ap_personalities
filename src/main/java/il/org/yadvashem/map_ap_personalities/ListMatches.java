@@ -12,7 +12,7 @@ public class ListMatches {
 
 		for (int i = 0; i < persAccessPoints.size(); i++) {
 			AccessPoint ap = persAccessPoints.get(i);
-			for (int idx = 0; idx < ehriPersonalities.size(); i++) {
+			for (int idx = 0; idx < ehriPersonalities.size(); idx++) {
 
 				Person person = ehriPersonalities.get(idx);
 

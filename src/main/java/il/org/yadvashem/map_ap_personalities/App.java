@@ -25,7 +25,6 @@ public class App {
 			List<AccessPoint> persAccessPoints = ParseAccessPointsTable.readAccessPointsTable(apTable);
 			System.out.println(persAccessPoints.size());
 			if (mode.equals("names") || mode.equals("complete")) {
-				ToDeleteMatchNames.findSimilars(persAccessPoints, ehriPersonalities);
 				ListMatches.listMatches(persAccessPoints, ehriPersonalities, mode);
 			} else {
 				System.out.println(

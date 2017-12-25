@@ -4,8 +4,8 @@ public class AssessMatch {
 
 	public static boolean assessMachNameString(AccessPoint ap, Person person){
 		boolean isMatch = false;
+	
 		double stringSimilarity = ComputeStringSimilarity.computeStringSimilarity(ap, person);
-
 		if (stringSimilarity >= .95) {
 			isMatch = true;
 		}
