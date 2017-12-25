@@ -12,6 +12,8 @@ public class ParseAccessPointsTable {
 	public static List<AccessPoint> readAccessPointsTable(String tablename) throws IOException{
 		List<AccessPoint> personAps = new ArrayList<AccessPoint>();
 		
+		List<String> namesofpeople = new ArrayList<String>();
+		
 		CSVReader reader = new CSVReader(new FileReader(tablename));
 		String[] nextLine;
 
@@ -19,6 +21,7 @@ public class ParseAccessPointsTable {
 			AccessPoint personAP = new AccessPoint();
 			personAP = ParseAccessPointString.parseAccessPointString(nextLine[0]);
 			personAps.add(personAP);
+			namesofpeople.add(nextLine[0]);
 			
 		}
 		reader.close();
