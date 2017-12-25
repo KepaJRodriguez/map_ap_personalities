@@ -17,7 +17,9 @@ public class ParseAccessPointString {
 		String apstring_normalized = apstring.replace(",", " ").replace("-", " ").replace("(", " ").replace(")", " ")
 				.replace("*", " ").replace(".", " ").replace("/", " ");
 		String[] ap_splitted = apstring_normalized.split(" ");
-
+		String ap_string_without_date = apstring.replace(",", " ").replace("-", " ").replace("(", " ").replace(")", " ")
+				.replace("*", "").replace(".", " ").replace("/", "").replaceAll("\\d", "").replaceAll("\\s{2,}", " ").trim();;
+		
 		for (int i = 0; i < ap_splitted.length; i++) {
 			Pattern pattern_year = Pattern.compile("(\\d{4})");
 			Pattern pattern_fragment = Pattern.compile("([a-zA-Z]+)");
@@ -39,6 +41,7 @@ public class ParseAccessPointString {
 		ap.setAPText(apstring);
 		ap.setDates(years);
 		ap.setPartsOfName(fragments);
+		ap.setCleanedName(ap_string_without_date);
 
 		return ap;
 	}
