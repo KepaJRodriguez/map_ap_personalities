@@ -11,17 +11,16 @@ public class ComputeStringSimilarity {
 		double similarity = 0.0;
 
 		JaroWinkler jw = new JaroWinkler();
-		similarity = jw.similarity(ap.getAPText(), person.getName());
+		similarity = jw.similarity(ap.getCleanedName(), person.getName());
 
 		List<String> aliases = person.getAliases();
 		if (aliases.size() > 0) {
 			for (int index = 0; index < aliases.size(); index++) {
-				if (jw.similarity(ap.getAPText(), aliases.get(index)) > similarity) {
-					similarity = jw.similarity(ap.getAPText(), aliases.get(index));
+				if (jw.similarity(ap.getCleanedName(), aliases.get(index)) > similarity) {
+					similarity = jw.similarity(ap.getCleanedName(), aliases.get(index));
 				}
 			}
 		}
-
 		return similarity;
 	}
 
