@@ -5,7 +5,6 @@ public class CompareDates {
 	public static String compareYears(AccessPoint ap, Person per) {
 
 		String agreement = "";
-
 		if (ap.getDates().size() == 0 || per.getDates().size() == 0) {
 			agreement = "IRRELEVANT";
 		} else {
@@ -27,6 +26,7 @@ public class CompareDates {
 				}
 			} else {
 				if (ap.getDates().size() == 1 || per.getDates().size() == 1) {
+
 					int coincidence = 0;
 					for (int i = 1; i < ap.getDates().size(); i++) {
 						if (per.getDates().contains(ap.getDates().get(i))) {
@@ -47,7 +47,6 @@ public class CompareDates {
 			}
 
 		}
-
 		return agreement;
 	}
 
