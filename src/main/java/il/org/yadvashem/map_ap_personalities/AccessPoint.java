@@ -15,7 +15,7 @@ public class AccessPoint {
 	private String ap_text = "";
 	private List<String> dates = new ArrayList<String>();
 	private List<String> parts_of_name = new ArrayList<String>();
-	
+	private String cleanedName = "";
 	
     public void setAPText( String ap_text ){
         this.ap_text = ap_text;
@@ -23,6 +23,10 @@ public class AccessPoint {
     
     public void setDates( List<String> dates ){
         this.dates = dates;
+    }
+    
+    public void setCleanedName(String cleanedName){
+    	this.cleanedName = cleanedName;
     }
     
     public void setPartsOfName( List<String> parts_of_name ){
@@ -39,6 +43,10 @@ public class AccessPoint {
     
     public List<String> getPartsOfName(){
         return this.parts_of_name;
+    }
+    
+    public String getCleanedName(){
+    	return this.cleanedName;
     }
     
 }
