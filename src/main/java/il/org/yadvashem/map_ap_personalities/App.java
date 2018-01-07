@@ -1,6 +1,7 @@
 package il.org.yadvashem.map_ap_personalities;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -20,11 +21,14 @@ public class App {
 			String apTable = args[2];
 			
 			List<Person> ehriPersonalities = ParsePersonalitiesTable.parsePersonalitiesTable(ehriTable);
-			System.out.println(ehriPersonalities.size());
+			//System.out.println(ehriPersonalities.size());
 			List<AccessPoint> persAccessPoints = ParseAccessPointsTable.readAccessPointsTable(apTable);
-			System.out.println(persAccessPoints.size());
+			//HashMap<Integer, HashMap<AccessPoint, Person>> listMatches = ListMatches.listMatches(persAccessPoints, ehriPersonalities, mode);
+			
+			//System.out.println(persAccessPoints.size());
 			if (mode.equals("names") || mode.equals("complete")) {
-				ListMatches.listMatches(persAccessPoints, ehriPersonalities, mode);
+				HashMap<Integer, HashMap<AccessPoint, Person>> listMatches = ListMatches.listMatches(persAccessPoints, ehriPersonalities, mode);
+				PrintTable.printTableOfMatches(apTable, listMatches);
 			} else {
 				System.out.println(
 						"Please give to the tool the parameters mode, table of EHRI vocabulary items\n and table of extracteda access points");

@@ -16,6 +16,16 @@ public class AccessPoint {
 	private List<String> dates = new ArrayList<String>();
 	private List<String> parts_of_name = new ArrayList<String>();
 	private String cleanedName = "";
+	private String authfilenumber = "";
+	private String source = "";
+	
+    public void setAuthFileNumber( String authfilenumber ){
+        this.authfilenumber = authfilenumber;
+    }
+        
+    public void setSource( String source ){
+        this.source = source;
+    }
 	
     public void setAPText( String ap_text ){
         this.ap_text = ap_text;
@@ -48,5 +58,10 @@ public class AccessPoint {
     public String getCleanedName(){
     	return this.cleanedName;
     }
-    
+    public String getAuthFileNumber(){
+        return this.authfilenumber;
+    }
+    public String getSource(){
+        return this.source;
+    }
 }

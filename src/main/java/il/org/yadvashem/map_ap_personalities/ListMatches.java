@@ -5,11 +5,11 @@ import java.util.List;
 
 public class ListMatches {
 
-	public static HashMap<String, String> listMatches(List<AccessPoint> persAccessPoints,
+	public static HashMap<Integer, HashMap<AccessPoint, Person>> listMatches(List<AccessPoint> persAccessPoints,
 			List<Person> ehriPersonalities, String option) {
 
-		HashMap<String, String> matches = new HashMap<String, String>();
-
+		HashMap<Integer, HashMap<AccessPoint, Person>> matches = new HashMap<Integer, HashMap<AccessPoint, Person>>();
+		int match_number = 0;
 		for (int i = 0; i < persAccessPoints.size(); i++) {
 			AccessPoint ap = persAccessPoints.get(i);
 			for (int idx = 0; idx < ehriPersonalities.size(); idx++) {
@@ -18,14 +18,18 @@ public class ListMatches {
 
 				if (option.equals("complete")) {
 					if (AssessMatch.assessMatchComplete(ap, person) == true) {
-						matches.put(ap.getAPText(), person.getName());
-						System.out.println(ap.getAPText() + "\t----\t" + person.getName());
+						match_number++;
+						HashMap<AccessPoint,Person> match = new HashMap<AccessPoint,Person>();
+						match.put(ap, person);
+						matches.put(match_number, match);
 					}
 				}
 				if (option.equals("names")) {
 					if (AssessMatch.assessMachNameString(ap, person) == true) {
-						matches.put(ap.getAPText(), person.getName());
-						System.out.println(ap.getAPText() + "\t----\t" + person.getName());
+						match_number++;
+						HashMap<AccessPoint,Person> match = new HashMap<AccessPoint,Person>();
+						match.put(ap, person);
+						matches.put(match_number, match);
 					}
 				}
 
